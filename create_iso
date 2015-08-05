@@ -30,14 +30,17 @@ function fetch_iso() {
     
     echo "==> Verifying $ISO with ${SHA256SUM}"
     
-    set +e 
-    $(shasum -a 512256 -c $ISO_DIR/$SHA256SUM)
+    set +e
+    pushd $PWD
+    cd $ISO_DIR
+    $(shasum -a 512256 -c $SHA256SUM)
     if [[ $? -eq 0 ]]; then
         echo "==> Checksums match, using local copy of $ISO"
     else
         echo "==> Checksums don't match!"
         exit 1
     fi
+    popd
     set -e
 }
 
