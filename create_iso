@@ -23,6 +23,8 @@ function fetch_iso() {
     if [ ! -e $ISO_DIR/$ISO ]; then
         echo "No local copy of $ISO. Fetching latest $ISO"
         curl -s -o $ISO_DIR/$ISO $MIRROR/$ISO
+    else
+        echo "Using local copy of $ISO."
     fi
 }
 
