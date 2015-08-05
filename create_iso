@@ -12,7 +12,7 @@ ISO_DIR=/data/fetched-suse-iso
 ISO_FILENAME=./suse-13-joyent.iso
 AUTOYAST=./autoinst.xml
 GUESTTOOLS=sdc-vmtools
-MIRROR=http://mirror.csclub.uwaterloo.ca/opensuse/distribution/13.2/iso
+MIRROR=http://opensuse-mirror-gce-us.opensu.se/distribution/13.2/iso
 MOUNT_POINT=/mnt/suse13
 
 function fetch_iso() {
